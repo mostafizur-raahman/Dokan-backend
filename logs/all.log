@@ -1,0 +1,25 @@
+{"level":"http","message":"::1 - - [29/May/2026:07:49:15 +0000] \"POST /users/register HTTP/1.1\" 404 154 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:49:15"}
+{"level":"http","message":"::1 - - [29/May/2026:07:50:49 +0000] \"POST /users/register HTTP/1.1\" 404 154 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:50:49"}
+{"level":"http","message":"::1 - - [29/May/2026:07:50:50 +0000] \"POST /users/register HTTP/1.1\" 404 154 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:50:50"}
+{"level":"http","message":"::1 - - [29/May/2026:07:54:00 +0000] \"POST /users/register HTTP/1.1\" 404 154 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:54:00"}
+{"level":"http","message":"::1 - - [29/May/2026:07:54:17 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1113 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:54:17"}
+{"level":"http","message":"::1 - - [29/May/2026:07:54:53 +0000] \"POST /v1/users/register HTTP/1.1\" 201 200 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:54:53"}
+{"level":"http","message":"::1 - - [29/May/2026:07:54:55 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 13:54:55"}
+{"level":"http","message":"::1 - - [29/May/2026:08:02:51 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 14:02:51"}
+{"level":"http","message":"::1 - - [29/May/2026:08:02:52 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 14:02:52"}
+{"level":"http","message":"::1 - - [29/May/2026:10:23:48 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:23:48"}
+{"level":"http","message":"::1 - - [29/May/2026:10:23:49 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:23:49"}
+{"level":"http","message":"::1 - - [29/May/2026:10:24:30 +0000] \"POST /v1/users/register HTTP/1.1\" 409 485 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:24:30"}
+{"level":"http","message":"::1 - - [29/May/2026:10:26:00 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"curl/8.5.0\"","timestamp":"2026-05-29 16:26:00"}
+{"level":"http","message":"::1 - - [29/May/2026:10:26:33 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:26:33"}
+{"level":"http","message":"::1 - - [29/May/2026:10:28:18 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:28:18"}
+{"level":"http","message":"::1 - - [29/May/2026:10:28:18 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:28:18"}
+{"level":"http","message":"::1 - - [29/May/2026:10:29:23 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"curl/8.5.0\"","timestamp":"2026-05-29 16:29:23"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:15 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:15"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:16 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:16"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:16 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:16"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:17 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:17"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:17 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:17"}
+{"level":"http","message":"::1 - - [29/May/2026:10:31:17 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:17"}
+{"errors":{"password":"Password must be at least 6 characters"},"level":"warn","message":"[400] Validation failed","method":"POST","path":"/v1/users/register","timestamp":"2026-05-29 16:34:58"}
+{"level":"http","message":"::1 - - [29/May/2026:10:34:58 +0000] \"POST /v1/users/register HTTP/1.1\" 400 1005 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:34:58"}
