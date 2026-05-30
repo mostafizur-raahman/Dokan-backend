@@ -1,49 +1,56 @@
 import jwt from "jsonwebtoken";
 import userModel from "../modules/user/model/user.js";
 import config from "../config/config.js";
+import ApiError from "../utils/error.js";
 
-const userAuth = async (req, res, next) => {
+export const protect = async (req, res, next) => {
     try {
         let token = null;
 
-        if (req.cookies && req.cookies.token) {
+        if (req.cookies?.token) {
             token = req.cookies.token;
         }
 
-        if (!token && req.headers.authorization) {
-            const authHeader = req.headers.authorization;
-            if (authHeader.startsWith("Bearer ")) {
-                token = authHeader.split(" ")[1];
-            } else {
-                token = authHeader;
-            }
+        if (!token && req.headers.authorization?.startsWith("Bearer ")) {
+            token = req.headers.authorization.split(" ")[1];
         }
 
         if (!token) {
-            return res.status(401).json({
-                success: false,
-                message: "Unauthorized: No token provided",
-            });
+            return next(new ApiError(401, "Unauthorized: No token provided"));
         }
+
         const decoded = jwt.verify(token, config.JWT_SECRET);
-        console.log("decoded ", decoded);
 
-        const user = await userModel.findById(decoded.id);
-
+        const user = await userModel.findById(decoded.id).select("+role");
         if (!user) {
-            return res.status(401).json({ message: "Unauthorized" });
+            return next(new ApiError(401, "User no longer exists"));
         }
 
         req.user = user;
-        req.userRole = decoded.role || user.role; // Get role from token or user
-        req.userId = decoded.id;
-
         next();
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        if (error.name === "JsonWebTokenError") {
+            return next(new ApiError(401, "Invalid token"));
+        }
+        if (error.name === "TokenExpiredError") {
+            return next(
+                new ApiError(401, "Token expired. Please log in again"),
+            );
+        }
+        next(error);
     }
 };
 
-export default {
-    userAuth,
+export const restrictTo = (...roles) => {
+    return (req, res, next) => {
+        if (!roles.includes(req.user.role)) {
+            return next(
+                new ApiError(
+                    403,
+                    "You do not have permission to perform this action",
+                ),
+            );
+        }
+        next();
+    };
 };

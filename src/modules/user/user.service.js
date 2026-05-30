@@ -2,6 +2,8 @@ import jwt from "jsonwebtoken";
 import config from "../../config/config.js";
 import userRepository from "./user.repository.js";
 import ApiError from "../../utils/error.js";
+import bcrypt from "bcryptjs";
+import userModel from "./model/user.js";
 
 const register = async (userData) => {
     const { name, email, password, role } = userData;
@@ -31,19 +33,15 @@ const login = async (credentials) => {
     const { email, password } = credentials;
 
     const user = await userRepository.findByEmail(email);
+    console.log("users : ", user);
+
     if (!user) {
-        const error = new Error("Invalid email or password");
-        error.statusCode = 401;
-        throw error;
+        throw new ApiError(401, "Invalid email or password");
     }
 
-    const userWithPassword = await userRepository.findById(user._id);
-
-    const isMatch = await userWithPassword.comparePassword(password);
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-        const error = new Error("Invalid email or password");
-        error.statusCode = 401;
-        throw error;
+        throw new ApiError(401, "Invalid email or password");
     }
 
     const token = jwt.sign(

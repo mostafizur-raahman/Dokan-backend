@@ -16,6 +16,7 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
     try {
+        console.log("users ", req.body);
         const authData = await userService.login(req.body);
 
         res.status(200).json({

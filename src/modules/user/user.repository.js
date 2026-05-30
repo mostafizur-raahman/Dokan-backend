@@ -5,7 +5,9 @@ const create = async (userData) => {
 };
 
 const findByEmail = async (email) => {
-    return await userModel.findOne({ email, isDeleted: false });
+    return await userModel
+        .findOne({ email, isDeleted: false })
+        .select("+password");
 };
 
 const findById = async (id) => {

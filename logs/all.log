@@ -23,3 +23,42 @@
 {"level":"http","message":"::1 - - [29/May/2026:10:31:17 +0000] \"POST /v1/users/register HTTP/1.1\" 500 1147 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:31:17"}
 {"errors":{"password":"Password must be at least 6 characters"},"level":"warn","message":"[400] Validation failed","method":"POST","path":"/v1/users/register","timestamp":"2026-05-29 16:34:58"}
 {"level":"http","message":"::1 - - [29/May/2026:10:34:58 +0000] \"POST /v1/users/register HTTP/1.1\" 400 1005 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-29 16:34:58"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:07:10 +0000] \"POST /v1/products/create HTTP/1.1\" 404 77 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:07:10"}
+{"level":"warn","message":"[401] User no longer exists","method":"POST","path":"/v1/products/create","timestamp":"2026-05-30 21:23:52"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:23:52 +0000] \"POST /v1/products/create HTTP/1.1\" 401 277 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:23:52"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:24:24 +0000] \"POST /api/v1/users/login HTTP/1.1\" 404 77 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:24:24"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:24:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:24:38 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:24:38"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:24:44"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:24:44 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:24:44"}
+{"errors":{"password":"Password must be at least 6 characters"},"level":"warn","message":"[400] Validation failed","method":"POST","path":"/v1/users/register","timestamp":"2026-05-30 21:24:55"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:24:55 +0000] \"POST /v1/users/register HTTP/1.1\" 400 1005 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:24:55"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:25:17 +0000] \"POST /v1/users/register HTTP/1.1\" 201 199 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:25:17"}
+{"level":"warn","message":"[500] userWithPassword.comparePassword is not a function","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:25:29"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:25:29 +0000] \"POST /v1/users/login HTTP/1.1\" 500 460 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:25:29"}
+{"level":"warn","message":"[500] userModel is not defined","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:30:07"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:30:07 +0000] \"POST /v1/users/login HTTP/1.1\" 500 1062 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:30:07"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:31:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:31:05 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:31:05"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:31:24"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:31:24 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:31:24"}
+{"level":"warn","message":"[500] next is not a function","method":"POST","path":"/v1/users/register","timestamp":"2026-05-30 21:34:02"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:34:02 +0000] \"POST /v1/users/register HTTP/1.1\" 500 964 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:34:02"}
+{"level":"warn","message":"[500] next is not a function","method":"POST","path":"/v1/users/register","timestamp":"2026-05-30 21:34:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:34:05 +0000] \"POST /v1/users/register HTTP/1.1\" 500 964 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:34:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:36:15 +0000] \"POST /v1/users/register HTTP/1.1\" 201 199 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:36:15"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:36:22"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:36:22 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:36:22"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:36:58"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:36:58 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:36:58"}
+{"level":"warn","message":"[401] Invalid email or password","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:37:40"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:37:40 +0000] \"POST /v1/users/login HTTP/1.1\" 401 405 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:37:40"}
+{"level":"warn","message":"[500] Illegal arguments: string, undefined","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:40:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:40:38 +0000] \"POST /v1/users/login HTTP/1.1\" 500 748 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:40:38"}
+{"level":"warn","message":"[500] Illegal arguments: string, undefined","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:40:40"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:40:40 +0000] \"POST /v1/users/login HTTP/1.1\" 500 748 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:40:40"}
+{"level":"warn","message":"[500] Illegal arguments: string, undefined","method":"POST","path":"/v1/users/login","timestamp":"2026-05-30 21:41:20"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:41:20 +0000] \"POST /v1/users/login HTTP/1.1\" 500 748 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:41:20"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:42:11 +0000] \"POST /v1/users/login HTTP/1.1\" 200 397 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:42:11"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:42:24 +0000] \"POST /v1/products/create HTTP/1.1\" 404 77 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:42:24"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:43:06 +0000] \"POST /v1/products/create HTTP/1.1\" 201 337 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:43:06"}

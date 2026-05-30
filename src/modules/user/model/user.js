@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema(
     {
@@ -7,8 +7,6 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, "Name is required"],
             trim: true,
-            minlength: [2, "Name must be at least 2 characters"],
-            maxlength: [50, "Name cannot exceed 50 characters"],
         },
         email: {
             type: String,
@@ -16,7 +14,6 @@ const userSchema = new mongoose.Schema(
             unique: true,
             lowercase: true,
             trim: true,
-            match: [/^\S+@\S+\.\S+$/, "Please provide a valid email"],
         },
         password: {
             type: String,
@@ -26,7 +23,7 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: String,
-            enum: ["user", "admin", "moderator"],
+            enum: ["user", "admin"],
             default: "user",
         },
         isDeleted: {
@@ -34,18 +31,34 @@ const userSchema = new mongoose.Schema(
             default: false,
         },
     },
-    {
-        timestamps: true,
-        toJSON: {
-            transform: function (doc, ret) {
-                delete ret.password;
-                delete ret.isDeleted;
-                return ret;
-            },
-        },
-    },
+    { timestamps: true },
 );
 
-const userModel = mongoose.model("users", userSchema);
+// 🔐 Hash password before saving - ASYNC VERSION (recommended)
+userSchema.pre("save", async function () {
+    // ✅ No 'next' parameter!
+    if (!this.isModified("password")) return; // ✅ Just return
 
-export default userModel;
+    try {
+        const salt = await bcrypt.genSalt(12);
+        this.password = await bcrypt.hash(this.password, salt);
+        // ✅ Async return = done, no next() needed
+    } catch (error) {
+        throw error; // ✅ Throw = reject promise = error handler catches it
+    }
+});
+
+// ✅ Compare password method
+userSchema.methods.comparePassword = async function (candidatePassword) {
+    return await bcrypt.compare(candidatePassword, this.password);
+};
+
+// ✅ Clean JSON output
+userSchema.methods.toJSON = function () {
+    const user = this.toObject();
+    delete user.password;
+    delete user.__v;
+    return user;
+};
+
+export default mongoose.model("User", userSchema);

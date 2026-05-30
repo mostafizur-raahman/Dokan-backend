@@ -1,12 +1,12 @@
 import express from "express";
-import router from "./modules/user/user.routes.js";
 import cookieParser from "cookie-parser";
 import connect from "./config/db.js";
 import cors from "cors";
 import morgan from "morgan";
 import logger from "./config/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
-
+import userRoutes from "./modules/user/user.routes.js";
+import productRoutes from "./modules/product/product.routes.js";
 // database connection
 connect();
 const app = express();
@@ -21,7 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("combined", { stream: logger.stream }));
 
 //rouitng middleware
-app.use("/v1/users", router);
+app.use("/v1/users", userRoutes);
+app.use("/v1/products", productRoutes);
 
 app.use((req, res, next) => {
     res.status(404).json({
