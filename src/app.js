@@ -10,9 +10,12 @@ import productRoutes from "./modules/product/product.routes.js";
 import categoriesRoutes from "./modules/category/category.routes.js";
 import cartRoutes from "./modules/cart/cart.routes.js";
 import orderRoutes from "./modules/order/order.routes.js";
+import paymentRoutes from "./modules/payment/payment.routes.js";
 // database connection
 connect();
 const app = express();
+
+app.use("/v1/payments", paymentRoutes);
 
 //middleware
 app.use(express.json());
@@ -29,6 +32,23 @@ app.use("/v1/categories", categoriesRoutes);
 app.use("/v1/products", productRoutes);
 app.use("/v1/carts", cartRoutes);
 app.use("/v1/orders", orderRoutes);
+// app.use("/v1/payments", paymentRoutes);
+
+app.get("/payment-success", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Payment successful!",
+        sessionId: req.query.session_id,
+    });
+});
+
+app.get("/payment-cancel", (req, res) => {
+    res.status(200).json({
+        success: false,
+        message: "Payment cancelled",
+        orderId: req.query.order_id,
+    });
+});
 
 // 404
 app.use((req, res, next) => {

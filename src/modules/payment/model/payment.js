@@ -15,7 +15,7 @@ const paymentSchema = new mongoose.Schema(
         },
         method: {
             type: String,
-            enum: ["card", "paypal", "stripe", "cash_on_delivery"],
+            enum: ["stripe", "cash_on_delivery"],
             required: [true, "Payment method is required"],
         },
         status: {
@@ -30,6 +30,22 @@ const paymentSchema = new mongoose.Schema(
         transactionId: {
             type: String,
             trim: true,
+        },
+        // Stripe specific fields
+        stripeSessionId: {
+            type: String,
+            trim: true,
+        },
+        stripePaymentIntentId: {
+            type: String,
+            trim: true,
+        },
+        stripeCustomerId: {
+            type: String,
+            trim: true,
+        },
+        receiptUrl: {
+            type: String,
         },
         paidAt: {
             type: Date,
