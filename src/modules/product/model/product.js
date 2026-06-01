@@ -22,11 +22,11 @@ const productSchema = new mongoose.Schema(
             min: [0, "Stock cannot be negative"],
             default: 0,
         },
-        // category: {
-        //     type: mongoose.Schema.Types.ObjectId,
-        //     ref: "categories",
-        //     required: [true, "Category is required"],
-        // },
+        categoryId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "categories",
+            required: [true, "Category is required"],
+        },
         images: [
             {
                 type: String,

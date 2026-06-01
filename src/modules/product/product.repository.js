@@ -9,7 +9,7 @@ const findAll = async (filter = {}, options = {}) => {
     const skip = (page - 1) * limit;
     const [products, total] = await Promise.all([
         Product.find(filter)
-            .populate("category", "name slug")
+            .populate("categoryId", "name slug")
             .sort(sort)
             .skip(skip)
             .limit(limit),
@@ -19,14 +19,14 @@ const findAll = async (filter = {}, options = {}) => {
 };
 
 const findById = async (id) => {
-    return await Product.findById(id).populate("category", "name slug");
+    return await Product.findById(id).populate("categoryId", "name slug");
 };
 
 const findByIdAndUpdate = async (id, data) => {
     return await Product.findByIdAndUpdate(id, data, {
         new: true,
         runValidators: true,
-    }).populate("category", "name slug");
+    }).populate("categoryId", "name slug");
 };
 
 const findByIdAndDelete = async (id) => {

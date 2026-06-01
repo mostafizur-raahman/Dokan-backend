@@ -7,6 +7,7 @@ import logger from "./config/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
 import userRoutes from "./modules/user/user.routes.js";
 import productRoutes from "./modules/product/product.routes.js";
+import categoriesRoutes from "./modules/category/category.routes.js";
 // database connection
 connect();
 const app = express();
@@ -22,6 +23,7 @@ app.use(morgan("combined", { stream: logger.stream }));
 
 //rouitng middleware
 app.use("/v1/users", userRoutes);
+app.use("/v1/categories", categoriesRoutes);
 app.use("/v1/products", productRoutes);
 
 app.use((req, res, next) => {

@@ -62,3 +62,32 @@
 {"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:42:11 +0000] \"POST /v1/users/login HTTP/1.1\" 200 397 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:42:11"}
 {"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:42:24 +0000] \"POST /v1/products/create HTTP/1.1\" 404 77 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:42:24"}
 {"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:43:06 +0000] \"POST /v1/products/create HTTP/1.1\" 201 337 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:43:06"}
+{"level":"warn","message":"[401] Unauthorized: No token provided","method":"POST","path":"/v1/products/create","timestamp":"2026-05-30 21:44:48"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:44:48 +0000] \"POST /v1/products/create HTTP/1.1\" 401 1040 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:44:48"}
+{"level":"warn","message":"[401] Unauthorized: No token provided","method":"POST","path":"/v1/products/create","timestamp":"2026-05-30 21:44:50"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [30/May/2026:15:44:50 +0000] \"POST /v1/products/create HTTP/1.1\" 401 1040 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-30 21:44:50"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:54:21 +0000] \"POST /v1/users/login HTTP/1.1\" 200 397 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:54:21"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:54:29 +0000] \"POST /v1/products/create HTTP/1.1\" 201 337 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:54:29"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:54:31 +0000] \"POST /v1/products/create HTTP/1.1\" 201 337 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:54:31"}
+{"level":"warn","message":"[500] Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","path":"/v1/products","timestamp":"2026-05-31 09:56:19"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:56:19 +0000] \"GET /v1/products HTTP/1.1\" 500 1365 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:56:19"}
+{"level":"warn","message":"[500] Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","path":"/v1/products","timestamp":"2026-05-31 09:57:03"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:57:03 +0000] \"GET /v1/products HTTP/1.1\" 500 1365 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:57:03"}
+{"level":"warn","message":"[500] Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","path":"/v1/products","timestamp":"2026-05-31 09:57:04"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:57:04 +0000] \"GET /v1/products HTTP/1.1\" 500 1365 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:57:04"}
+{"level":"warn","message":"[500] Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","path":"/v1/products","timestamp":"2026-05-31 09:57:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:57:05 +0000] \"GET /v1/products HTTP/1.1\" 500 1365 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:57:05"}
+{"level":"warn","message":"[500] Cannot populate path `category` because it is not in your schema. Set the `strictPopulate` option to false to override.","method":"GET","path":"/v1/products","timestamp":"2026-05-31 09:57:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:57:05 +0000] \"GET /v1/products HTTP/1.1\" 500 1365 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:57:05"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:03:57:40 +0000] \"GET /v1/products HTTP/1.1\" 200 1001 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 09:57:40"}
+{"level":"warn","message":"[401] Unauthorized: No token provided","method":"POST","path":"/v1/categories/create","timestamp":"2026-05-31 10:43:37"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:04:43:37 +0000] \"POST /v1/categories/create HTTP/1.1\" 401 1040 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 10:43:37"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:04:43:59 +0000] \"POST /v1/categories/create HTTP/1.1\" 404 79 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 10:43:59"}
+{"level":"warn","message":"[500] next is not a function","method":"POST","path":"/v1/categories/create","timestamp":"2026-05-31 10:44:18"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:04:44:18 +0000] \"POST /v1/categories/create HTTP/1.1\" 500 403 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 10:44:18"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:04:44:49 +0000] \"POST /v1/categories/create HTTP/1.1\" 201 191 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 10:44:49"}
+{"level":"warn","message":"[409] Duplicate field value: name. Please use another value!","method":"POST","path":"/v1/categories/create","timestamp":"2026-05-31 10:44:53"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:04:44:53 +0000] \"POST /v1/categories/create HTTP/1.1\" 409 1334 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 10:44:53"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:49:04 +0000] \"POST /v1/products/create HTTP/1.1\" 201 377 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:49:04"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:51:25 +0000] \"POST /v1/products/create HTTP/1.1\" 201 424 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:51:25"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:51:50 +0000] \"GET /v1/products HTTP/1.1\" 200 892 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:51:50"}
