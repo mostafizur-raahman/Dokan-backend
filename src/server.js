@@ -13,7 +13,7 @@ if (typeof global.crypto === "undefined") {
 }
 
 if (cluster.isPrimary) {
-    console.log(`🚀 Primary ${process.pid} is running`);
+    console.log(`Primary ${process.pid} is running`);
     console.log(
         `📦 Detected ${totalCPUs} CPUs, forking ${totalCPUs} workers...`,
     );
@@ -29,11 +29,9 @@ if (cluster.isPrimary) {
             status: "starting",
         });
     }
-
-    // Listen for worker online event
     cluster.on("online", (worker) => {
         console.log(
-            `✅ Worker ${worker.id} (PID: ${worker.process.pid}) is ONLINE`,
+            `Worker ${worker.id} (PID: ${worker.process.pid}) is ONLINE`,
         );
         activeWorkers.set(worker.id, {
             pid: worker.process.pid,
@@ -43,23 +41,19 @@ if (cluster.isPrimary) {
         logWorkerStatus(activeWorkers);
     });
 
-    // Listen for worker exit
     cluster.on("exit", (worker, code, signal) => {
         const info = activeWorkers.get(worker.id);
-        console.log(
-            `❌ Worker ${worker.id} (PID: ${worker.process.pid}) died:`,
-            {
-                code,
-                signal,
-                uptime: info?.uptime
-                    ? `${Math.floor((Date.now() - info.uptime) / 1000)}s`
-                    : "N/A",
-            },
-        );
+        console.log(`Worker ${worker.id} (PID: ${worker.process.pid}) died:`, {
+            code,
+            signal,
+            uptime: info?.uptime
+                ? `${Math.floor((Date.now() - info.uptime) / 1000)}s`
+                : "N/A",
+        });
         activeWorkers.delete(worker.id);
 
         // Restart worker
-        console.log(`🔄 Restarting worker ${worker.id}...`);
+        console.log(`Restarting worker ${worker.id}...`);
         const newWorker = cluster.fork();
         activeWorkers.set(newWorker.id, {
             pid: newWorker.process.pid,
@@ -69,20 +63,17 @@ if (cluster.isPrimary) {
         logWorkerStatus(activeWorkers);
     });
 
-    // Helper: Log current worker status
     const logWorkerStatus = (workers) => {
         const online = Array.from(workers.values()).filter(
             (w) => w.status === "online",
         ).length;
-        console.log(`📊 Active Workers: ${online}/${totalCPUs}`);
+        console.log(`Active Workers: ${online}/${totalCPUs}`);
         console.log(
             `   ${Array.from(workers.entries())
                 .map(([id, w]) => `[#${id} PID:${w.pid} ${w.status}]`)
                 .join(" ")}`,
         );
     };
-
-    // Optional: Log status every 30 seconds
     setInterval(() => {
         logWorkerStatus(activeWorkers);
     }, 30000);
@@ -92,17 +83,16 @@ if (cluster.isPrimary) {
 
     server.listen(PORT, () => {
         console.log(
-            `✅ Worker ${cluster.worker.id} (PID: ${process.pid}) listening on port ${PORT}`,
+            `Worker ${cluster.worker.id} (PID: ${process.pid}) listening on port ${PORT}`,
         );
     });
 
-    // Graceful shutdown
     process.on("SIGTERM", () => {
         console.log(
-            `🛑 Worker ${cluster.worker.id} received SIGTERM, shutting down...`,
+            `Worker ${cluster.worker.id} received SIGTERM, shutting down...`,
         );
         server.close(() => {
-            console.log(`✅ Worker ${cluster.worker.id} closed HTTP server`);
+            console.log(`Worker ${cluster.worker.id} closed HTTP server`);
             process.exit(0);
         });
     });
