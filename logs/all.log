@@ -91,3 +91,28 @@
 {"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:49:04 +0000] \"POST /v1/products/create HTTP/1.1\" 201 377 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:49:04"}
 {"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:51:25 +0000] \"POST /v1/products/create HTTP/1.1\" 201 424 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:51:25"}
 {"level":"http","message":"::ffff:127.0.0.1 - - [31/May/2026:13:51:50 +0000] \"GET /v1/products HTTP/1.1\" 200 892 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-05-31 19:51:50"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:35:51 +0000] \"POST /v1/users/login HTTP/1.1\" 200 397 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:35:51"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:36:20 +0000] \"GET /v1/products HTTP/1.1\" 200 892 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:36:20"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:36:41 +0000] \"POST /v1/carts/add-to-cart HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:36:41"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:37:18 +0000] \"GET /v1/carts HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:37:18"}
+{"level":"warn","message":"[401] Unauthorized: No token provided","method":"GET","path":"/v1/carts","timestamp":"2026-06-01 11:37:27"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:37:27 +0000] \"GET /v1/carts HTTP/1.1\" 401 1040 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:37:27"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:37:29 +0000] \"GET /v1/carts HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:37:29"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:38:38 +0000] \"POST /v1/carts/clear HTTP/1.1\" 404 73 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:38:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:38:44 +0000] \"DELETE /v1/carts/clear HTTP/1.1\" 200 41 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:38:44"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:38:57 +0000] \"POST /v1/carts/add-to-cart HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:38:57"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:39:03 +0000] \"DELETE /v1/carts/6a1c3cdd05250ddf3f27388f HTTP/1.1\" 200 204 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:39:03"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:39:08 +0000] \"GET /v1/carts HTTP/1.1\" 200 204 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:39:08"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:51:18 +0000] \"POST /v1/carts/add-to-cart HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:51:18"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:51:21 +0000] \"GET /v1/carts HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:51:21"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:53:34 +0000] \"POST /v1/order/create HTTP/1.1\" 404 74 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:53:34"}
+{"errors":{"shippingAddress.city":"Path `shippingAddress.city` is required.","shippingAddress.country":"Path `shippingAddress.country` is required.","shippingAddress.street":"Path `shippingAddress.street` is required.","shippingAddress.zip":"Path `shippingAddress.zip` is required."},"level":"warn","message":"[400] Validation failed","method":"POST","path":"/v1/orders/create","timestamp":"2026-06-01 11:53:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:05:53:38 +0000] \"POST /v1/orders/create HTTP/1.1\" 400 1237 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 11:53:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:02:38 +0000] \"POST /v1/orders/create HTTP/1.1\" 201 448 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:02:38"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:02:48 +0000] \"GET /v1/carts HTTP/1.1\" 200 204 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:02:48"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:18 +0000] \"GET /v1/orders/my-orders HTTP/1.1\" 200 544 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:18"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:37 +0000] \"GET /v1/products HTTP/1.1\" 200 892 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:37"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:43 +0000] \"POST /v1/carts/add-to-cart HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:43"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:48 +0000] \"GET /v1/carts HTTP/1.1\" 200 389 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:48"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:53 +0000] \"POST /v1/orders/create HTTP/1.1\" 201 448 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:53"}
+{"level":"http","message":"::ffff:127.0.0.1 - - [01/Jun/2026:06:03:56 +0000] \"GET /v1/orders/my-orders HTTP/1.1\" 200 1063 \"-\" \"bruno-runtime/1.33.1\"","timestamp":"2026-06-01 12:03:56"}
