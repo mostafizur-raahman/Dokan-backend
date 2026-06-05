@@ -1,11 +1,17 @@
-
 serverLocation := ./src/server.js
 serverName := dokan-backend
+imageName := dokan_backend
+dockerUserName := mostafizurrahman24
 
-# 🎯 Declare all targets as phony (not files)
 .PHONY: run hard-run stop delete restart logs status list help
 
-hard-run:
+
+build:
+	@docker build -t ${dockerUserName}/${imageName}:latest .
+push: 
+	@docker push ${dockerUserName}/${imageName}:latest
+	
+nodemon:
 	@nodemon $(serverLocation)
 
 run:

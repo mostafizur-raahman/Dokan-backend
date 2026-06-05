@@ -22,6 +22,13 @@ const findAll = async () => {
     return await userModel.find({ isDeleted: false });
 };
 
+const findAllWithoutAdmin = async () => {
+    return await userModel.find({
+        isDeleted: false,
+        role: { $ne: "admin" },
+    });
+};
+
 const update = async (id, updateData) => {
     return await userModel.findByIdAndUpdate(id, updateData, {
         new: true,
@@ -47,4 +54,5 @@ export default {
     update,
     softDelete,
     exists,
+    findAllWithoutAdmin,
 };

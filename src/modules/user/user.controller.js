@@ -55,6 +55,19 @@ const getAllUsers = async (req, res, next) => {
     }
 };
 
+const getAllUsersWithoutAdmin = async (req, res, next) => {
+    try {
+        const usersData = await userService.getAllUsersWithoutAdmin();
+
+        res.status(200).json({
+            success: true,
+            ...usersData,
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
 const updateUser = async (req, res, next) => {
     try {
         const updatedUser = await userService.updateUser(
@@ -92,4 +105,5 @@ export default {
     getAllUsers,
     updateUser,
     deleteUser,
+    getAllUsersWithoutAdmin,
 };

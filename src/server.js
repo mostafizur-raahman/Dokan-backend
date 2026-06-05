@@ -81,7 +81,7 @@ if (cluster.isPrimary) {
     // Worker process
     const server = http.createServer(app);
 
-    server.listen(PORT, () => {
+    server.listen(PORT, "0.0.0.0", () => {
         console.log(
             `Worker ${cluster.worker.id} (PID: ${process.pid}) listening on port ${PORT}`,
         );

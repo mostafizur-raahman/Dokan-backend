@@ -12,10 +12,4 @@ const config = {
     CLIENT_URL: process.env.CLIENT_URL,
 };
 
-// // Debug: Log which values are being used (remove in production)
-// console.log("Config loaded:");
-// console.log("- PORT:", config.PORT);
-// console.log("- DATABASE_URL:", config.DATABASE_URL ? "✅ Set" : "❌ Missing");
-// console.log("- JWT_SECRET:", config.JWT_SECRET ? "✅ Set" : "❌ Missing");
-
 export default config;

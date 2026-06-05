@@ -101,6 +101,21 @@ const getAllUsers = async () => {
     };
 };
 
+const getAllUsersWithoutAdmin = async () => {
+    const users = await userRepository.findAllWithoutAdmin();
+
+    return {
+        count: users.length,
+        users: users.map((user) => ({
+            id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            createdAt: user.createdAt,
+        })),
+    };
+};
+
 const updateUser = async (userId, updateData) => {
     const { password, isDeleted, ...safeUpdateData } = updateData;
 
@@ -140,4 +155,5 @@ export default {
     getAllUsers,
     updateUser,
     deleteUser,
+    getAllUsersWithoutAdmin,
 };
